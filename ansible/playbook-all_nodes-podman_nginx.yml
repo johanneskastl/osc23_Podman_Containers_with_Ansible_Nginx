@@ -1,0 +1,8 @@
+---
+- name: 'Run a simple nginx container with Podman'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  roles:
+    - role: 'johanneskastl.podman_nginx'

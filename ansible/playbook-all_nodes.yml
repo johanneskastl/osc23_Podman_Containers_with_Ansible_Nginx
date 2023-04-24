@@ -26,3 +26,16 @@
 
 - name: 'Run playbook-all_nodes-create_index.html'
   ansible.builtin.import_playbook: playbook-all_nodes-create_index.html
+
+#
+# rootful container
+#
+
+# Uncomment the following two tasks and comment out the previous two tasks
+# to create a rootful container
+
+# - name: 'Run playbook-all_nodes-podman_nginx_rootfulcontainer.yml'
+#   ansible.builtin.import_playbook: playbook-all_nodes-podman_nginx_rootfulcontainer.yml
+
+# - name: 'Run playbook-all_nodes-create_index_rootful.html'
+#   ansible.builtin.import_playbook: playbook-all_nodes-create_index_rootful.html

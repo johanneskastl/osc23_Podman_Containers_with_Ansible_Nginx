@@ -1,0 +1,15 @@
+---
+- name: 'Create index.html'
+  hosts: 'all'
+  gather_facts: true
+  become: false
+
+  tasks:
+
+    - name: 'Create index.html from template'
+      ansible.builtin.template:
+        src: index.html.j2
+        dest: /home/vagrant/nginx_Podman/index.html
+        owner: vagrant
+        group: vagrant
+        mode: 0644

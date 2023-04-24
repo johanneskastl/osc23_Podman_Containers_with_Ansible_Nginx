@@ -17,3 +17,12 @@
 
 - name: 'Run playbook-all_nodes-install_podman.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-install_podman.yml
+
+#
+# rootless container
+#
+- name: 'Run playbook-all_nodes-podman_nginx.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-podman_nginx.yml
+
+- name: 'Run playbook-all_nodes-create_index.html'
+  ansible.builtin.import_playbook: playbook-all_nodes-create_index.html

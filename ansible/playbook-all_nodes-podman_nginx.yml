@@ -1,8 +1,12 @@
 ---
-- name: 'Run a simple nginx container with Podman'
+- name: 'Run a simple (unprivileged) nginx container with Podman'
   hosts: 'all'
   gather_facts: true
-  become: true
+  become: false
 
   roles:
     - role: 'johanneskastl.podman_nginx'
+      podman_nginx_data_directory: '/home/vagrant/nginx_Podman'
+      podman_nginx_default_user: 'vagrant'
+      podman_nginx_default_group: 'vagrant'
+      podman_nginx_rootful_container: false

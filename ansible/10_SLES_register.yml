@@ -1,0 +1,27 @@
+---
+- name: "Register SLES (without HA extension or similar)"
+  hosts: 'all'
+  become: 'true'
+
+  pre_tasks:
+
+    - name: 'fail if license key is empty'
+      fail:
+        msg: "License key variable suse_license_key is empty, have you set it in group_vars/all/SUSE_LICENSE_KEY.yml?"
+      when: 'ansible_distribution == "SLES" and suse_license_key is undefined'
+
+  roles:
+
+  - role: 'b1-systems-ansible-role-suseconnect'
+    when: 'ansible_distribution == "SLES" and ansible_distribution_major_version == "15"'
+    vars:
+      suseconnect_products:
+        - product: 'SLES'
+          key: "{{ suse_license_key }}"
+        - product: 'sle-module-basesystem'
+        - product: 'sle-module-server-applications'
+        - product: 'sle-module-web-scripting'
+        - product: 'sle-module-desktop-applications'
+        - product: 'sle-module-development-tools'
+        - product: 'PackageHub'
+        - product: 'sle-module-legacy'

@@ -19,5 +19,10 @@ Vagrant.configure("2") do |config|
     # set the hostname
     node.vm.hostname = "podman-nginx"
 
+    # use Ansible for provisioning
+    node.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/playbook-all_nodes.yml"
+    end
+
   end # config.vm.define nodes
 end

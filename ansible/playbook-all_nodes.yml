@@ -1,0 +1,16 @@
+---
+
+- name: 'Run 10_SLES_register.yml'
+  ansible.builtin.import_playbook: 10_SLES_register.yml
+
+- name: 'Run playbook-all_nodes-zypper_ref_accept_keys.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-zypper_ref_accept_keys.yml
+
+- name: 'Run playbook-all_nodes-minimal_bashrc.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-minimal_bashrc.yml
+
+- name: 'Run playbook-all_nodes-install_tmux.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-install_tmux.yml
+
+- name: 'Run playbook-all_nodes-minimal_tmux_configuration.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-minimal_tmux_configuration.yml

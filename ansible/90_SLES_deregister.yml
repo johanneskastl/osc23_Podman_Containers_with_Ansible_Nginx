@@ -1,0 +1,9 @@
+---
+- hosts: 'all'
+  become: 'true'
+
+  roles:
+    - role: 'b1-systems-ansible-role-suseconnect'
+      vars:
+        suseconnect_remove_subscriptions: 'true'
+      when: 'ansible_distribution == "SLES"'

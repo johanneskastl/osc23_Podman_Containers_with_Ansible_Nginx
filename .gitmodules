@@ -25,3 +25,6 @@
 [submodule "helpers"]
 	path = helpers
 	url = https://github.com/johanneskastl/helpers.git
+[submodule "ansible/roles/johanneskastl.podman_nginx"]
+	path = ansible/roles/johanneskastl.podman_nginx
+	url = https://github.com/johanneskastl/ansible-role-podman_nginx
